@@ -132,7 +132,7 @@ The engine is organized around five conceptual layers:
 
 ### 🏗️ System Architecture Diagram
 
-Figure: High-level architecture of the Quantum Chess Engine showing data flow between quantum board representation, move generation, evaluation, and search.
+**Figure:** High-level architecture of the Quantum Chess Engine showing data flow between quantum board representation, move generation, evaluation, and search.
 
 ```mermaid
 flowchart TD
@@ -149,7 +149,7 @@ flowchart TD
 
     F --> G[QASM Simulator]
     G --> E
-
+```
 
 ### ✅ Why this matters
 - Makes the project **instantly understandable**
