@@ -4,6 +4,21 @@
 ![Research](https://img.shields.io/badge/Project-Research%20%26%20Experimental-orange.svg)
 ![Status](https://img.shields.io/badge/Status-Active%20Development-success.svg)
 
+## 📄 Abstract
+
+Quantum Chess Ultimate presents an experimental framework for integrating
+quantum computing concepts into classical chess engine design. The system
+models chess positions using quantum registers, enabling superposition-based
+piece representation and probabilistic move execution. A quantum-aware minimax
+algorithm is employed to explore decision-making under uncertainty, with board
+evaluation performed via simulated quantum measurement.
+
+Rather than aiming for competitive performance, this project serves as a
+research-oriented prototype to study how quantum principles such as
+superposition, measurement, and probabilistic outcomes influence strategic
+reasoning in adversarial games. The architecture is designed for extensibility,
+making it suitable for experimentation, education, and future research into
+hybrid quantum–classical AI systems.
 
 **Quantum Chess Ultimate** is an experimental Python-based project that explores the fusion of **quantum computing concepts** with **chess engine design**.  
 It reimagines classical chess by introducing **quantum superposition, probabilistic moves, and quantum-aware decision-making** using IBM’s Qiskit framework.
@@ -83,7 +98,6 @@ The core logic of **Quantum Chess Ultimate** is implemented in:
 
 quantum-chess-engine.py
 
-
 This file defines the `QuantumChessEngine` class, which encapsulates the full lifecycle of a quantum chess position—from representation and move generation to evaluation and decision-making.
 
 ---
@@ -125,6 +139,54 @@ The engine is organized around five conceptual layers:
 - Designed to balance exploration depth with quantum evaluation cost
 
 ---
+
+### 🏗️ System Architecture Diagram
+
+```mermaid
+flowchart TD
+    A[QuantumChessEngine] --> B[Quantum Board]
+    A --> C[Move Generator]
+    A --> D[Quantum Minimax Search]
+    D --> E[Evaluation Function]
+    E --> F[Board Measurement]
+
+    B --> B1[Quantum Registers<br/>5 Qubits per Square]
+    C --> C1[Quantum Circuits]
+    C1 --> C2[RY Rotations]
+    C1 --> C3[CSWAP Gates]
+
+    F --> G[QASM Simulator]
+    G --> E
+
+Figure: High-level architecture of the Quantum Chess Engine showing data flow between quantum board representation, move generation, evaluation, and search.
+
+
+### ✅ Why this matters
+- Makes the project **instantly understandable**
+- Huge plus for reviewers, professors, and contributors
+- Zero maintenance cost
+
+---
+
+# 2️⃣ Method-Level Documentation Table
+
+This bridges the gap between **conceptual design** and **actual code**.
+
+### 🔧 Add this section after *Engine Implementation (Core File)*
+
+### 📚 Method-Level Documentation
+
+| Method | Purpose | Key Concepts |
+|------|--------|-------------|
+| `__init__` | Initializes engine state and simulator | Search depth, QASM backend |
+| `_initialize_quantum_board` | Creates quantum registers for all board squares | Qubit encoding, board abstraction |
+| `create_move_circuit` | Encodes a chess move as a quantum circuit | Superposition, CSWAP, RY gates |
+| `evaluate_position` | Scores a measured board position | Material, position, superposition |
+| `quantum_minimax` | Searches best move using quantum-aware minimax | Alpha-beta pruning, recursion |
+| `find_best_move` | Returns best move for current state | Decision extraction |
+| `_measure_board` | Collapses quantum states to classical bits | Measurement, state collapse |
+| `_generate_legal_moves` | Generates candidate quantum moves | Placeholder abstraction |
+| `_is_legal_move` | Validates move legality | Classical + quantum rules (future) |
 
 ### ⚠️ Design Notes & Limitations
 
