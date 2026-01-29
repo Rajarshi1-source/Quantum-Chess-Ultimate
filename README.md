@@ -6,19 +6,9 @@
 
 ## 📄 Abstract
 
-Quantum Chess Ultimate presents an experimental framework for integrating
-quantum computing concepts into classical chess engine design. The system
-models chess positions using quantum registers, enabling superposition-based
-piece representation and probabilistic move execution. A quantum-aware minimax
-algorithm is employed to explore decision-making under uncertainty, with board
-evaluation performed via simulated quantum measurement.
+Quantum Chess Ultimate presents an experimental framework for integrating quantum computing concepts into classical chess engine design. The system models chess positions using quantum registers, enabling superposition-based piece representation and probabilistic move execution. A quantum-aware minimax algorithm is employed to explore decision-making under uncertainty, with board evaluation performed via simulated quantum measurement.
 
-Rather than aiming for competitive performance, this project serves as a
-research-oriented prototype to study how quantum principles such as
-superposition, measurement, and probabilistic outcomes influence strategic
-reasoning in adversarial games. The architecture is designed for extensibility,
-making it suitable for experimentation, education, and future research into
-hybrid quantum–classical AI systems.
+Rather than aiming for competitive performance, this project serves as a research-oriented prototype to study how quantum principles such as superposition, measurement, and probabilistic outcomes influence strategic reasoning in adversarial games. The architecture is designed for extensibility, making it suitable for experimentation,education, and future research into hybrid quantum–classical AI systems.
 
 **Quantum Chess Ultimate** is an experimental Python-based project that explores the fusion of **quantum computing concepts** with **chess engine design**.  
 It reimagines classical chess by introducing **quantum superposition, probabilistic moves, and quantum-aware decision-making** using IBM’s Qiskit framework.
