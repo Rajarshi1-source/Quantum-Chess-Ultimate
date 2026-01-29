@@ -1,4 +1,9 @@
 # ♟️ Quantum Chess Ultimate
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)
+![Qiskit](https://img.shields.io/badge/Qiskit-Quantum%20SDK-purple.svg)
+![Research](https://img.shields.io/badge/Project-Research%20%26%20Experimental-orange.svg)
+![Status](https://img.shields.io/badge/Status-Active%20Development-success.svg)
+
 
 **Quantum Chess Ultimate** is an experimental Python-based project that explores the fusion of **quantum computing concepts** with **chess engine design**.  
 It reimagines classical chess by introducing **quantum superposition, probabilistic moves, and quantum-aware decision-making** using IBM’s Qiskit framework.
@@ -158,6 +163,84 @@ Anyone curious about “What if chess were quantum?”
 
 This project is experimental and educational.
 It does not represent a physically accurate quantum chess implementation, but rather a computational and conceptual model.
+
+---
+
+## 🗺️ Project Roadmap
+
+This roadmap outlines the planned evolution of **Quantum Chess Ultimate**, from a conceptual prototype to a research-grade quantum AI system.
+
+---
+
+### 📌 Phase 1 — Foundation (Completed ✅)
+**Goal:** Establish core quantum chess mechanics
+
+- [x] Quantum board representation using qubits
+- [x] Superposition-based move modeling
+- [x] Quantum circuit generation for moves
+- [x] Basic position evaluation
+- [x] Quantum-aware minimax search
+- [x] Simulator-based execution (QASM)
+
+---
+
+### 🔬 Phase 2 — Quantum Rules & Accuracy (In Progress 🚧)
+**Goal:** Improve realism and rule correctness
+
+- [ ] Formal quantum chess rule set
+- [ ] Quantum capture mechanics
+- [ ] Partial measurement handling
+- [ ] Interference-based move outcomes
+- [ ] Improved legality checking
+- [ ] Entanglement between pieces
+
+---
+
+### ⚙️ Phase 3 — Performance & Optimization
+**Goal:** Make the engine scalable and efficient
+
+- [ ] Circuit depth optimization
+- [ ] Gate reduction strategies
+- [ ] Caching quantum evaluations
+- [ ] Parallel simulation of branches
+- [ ] Smarter pruning heuristics
+
+---
+
+### 🧠 Phase 4 — AI & Learning
+**Goal:** Add adaptive intelligence
+
+- [ ] Machine learning–based evaluation
+- [ ] Training on simulated quantum games
+- [ ] Reinforcement learning integration
+- [ ] Strategy evolution over time
+
+---
+
+### 🎨 Phase 5 — Visualization & UX
+**Goal:** Make the engine observable and interactive
+
+- [ ] Board visualization
+- [ ] Quantum state probability display
+- [ ] Move tree visualization
+- [ ] CLI interface
+- [ ] Web or GUI frontend (future)
+
+---
+
+### 📚 Phase 6 — Research & Publication
+**Goal:** Academic and open research impact
+
+- [ ] Benchmark against classical engines
+- [ ] Publish design notes / whitepaper
+- [ ] Experiment with real quantum hardware
+- [ ] Educational demos for quantum learning
+- [ ] Community-driven research extensions
+
+---
+
+### 🚀 Long-Term Vision
+To explore how **uncertainty, probability, and quantum mechanics** can redefine decision-making in strategic games—and inspire new forms of AI beyond classical computation.
 
 🤝 Contributions
 
