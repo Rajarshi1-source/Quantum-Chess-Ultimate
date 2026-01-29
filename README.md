@@ -130,6 +130,25 @@ The engine is organized around five conceptual layers:
 
 ---
 
+# Method-Level Documentation Table
+
+This bridges the gap between **conceptual design** and **actual code**.
+
+### 📚 Method-Level Documentation
+
+| Method | Purpose | Key Concepts |
+|------|--------|-------------|
+| `__init__` | Initializes engine state and simulator | Search depth, QASM backend |
+| `_initialize_quantum_board` | Creates quantum registers for all board squares | Qubit encoding, board abstraction |
+| `create_move_circuit` | Encodes a chess move as a quantum circuit | Superposition, CSWAP, RY gates |
+| `evaluate_position` | Scores a measured board position | Material, position, superposition |
+| `quantum_minimax` | Searches best move using quantum-aware minimax | Alpha-beta pruning, recursion |
+| `find_best_move` | Returns best move for current state | Decision extraction |
+| `_measure_board` | Collapses quantum states to classical bits | Measurement, state collapse |
+| `_generate_legal_moves` | Generates candidate quantum moves | Placeholder abstraction |
+| `_is_legal_move` | Validates move legality | Classical + quantum rules (future) |
+
+
 ### 🏗️ System Architecture Diagram
 
 **Figure:** High-level architecture of the Quantum Chess Engine showing data flow between quantum board representation, move generation, evaluation, and search.
@@ -157,26 +176,6 @@ flowchart TD
 - Zero maintenance cost
 
 ---
-
-# 2️⃣ Method-Level Documentation Table
-
-This bridges the gap between **conceptual design** and **actual code**.
-
-### 🔧 Add this section after *Engine Implementation (Core File)*
-
-### 📚 Method-Level Documentation
-
-| Method | Purpose | Key Concepts |
-|------|--------|-------------|
-| `__init__` | Initializes engine state and simulator | Search depth, QASM backend |
-| `_initialize_quantum_board` | Creates quantum registers for all board squares | Qubit encoding, board abstraction |
-| `create_move_circuit` | Encodes a chess move as a quantum circuit | Superposition, CSWAP, RY gates |
-| `evaluate_position` | Scores a measured board position | Material, position, superposition |
-| `quantum_minimax` | Searches best move using quantum-aware minimax | Alpha-beta pruning, recursion |
-| `find_best_move` | Returns best move for current state | Decision extraction |
-| `_measure_board` | Collapses quantum states to classical bits | Measurement, state collapse |
-| `_generate_legal_moves` | Generates candidate quantum moves | Placeholder abstraction |
-| `_is_legal_move` | Validates move legality | Classical + quantum rules (future) |
 
 ### ⚠️ Design Notes & Limitations
 
