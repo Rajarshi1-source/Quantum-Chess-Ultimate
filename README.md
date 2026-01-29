@@ -79,20 +79,75 @@ This engine models those ideas at a **conceptual and computational level**, not 
 
 ## 🧪 Engine Implementation (Core File)
 
-The main engine is implemented in:
+The core logic of **Quantum Chess Ultimate** is implemented in:
 
 quantum-chess-engine.py
 
 
-It defines the `QuantumChessEngine` class and includes:
+This file defines the `QuantumChessEngine` class, which encapsulates the full lifecycle of a quantum chess position—from representation and move generation to evaluation and decision-making.
 
-- Quantum board initialization
-- Move circuit generation
-- Board measurement
-- Quantum-aware evaluation
-- Recursive minimax search
+---
 
-(See the full implementation in the source file :contentReference[oaicite:0]{index=0})
+### 🔧 Architectural Overview
+
+The engine is organized around five conceptual layers:
+
+#### 1. Quantum Board Abstraction
+- Each chess square is mapped to a **5-qubit quantum register**
+- Qubit layout per square:
+  - 3 qubits → piece identity
+  - 1 qubit → piece color
+  - 1 qubit → superposition control
+- This design allows classical positions and quantum uncertainty to coexist in a unified representation
+
+#### 2. Quantum Move Encoding
+- Moves are represented as **quantum circuits**
+- Superposition is introduced using parameterized `RY` rotations
+- Piece transfer between squares is performed using `CSWAP` gates
+- This enables a single move to encode multiple probabilistic outcomes
+
+#### 3. Measurement & State Collapse
+- Board evaluation requires **measurement of quantum states**
+- Each square is measured independently using the QASM simulator
+- Measurements collapse quantum states into classical bitstrings used for evaluation
+
+#### 4. Quantum-Aware Evaluation Function
+- Assigns values based on:
+  - Classical material balance
+  - Positional heuristics (e.g., pawn advancement)
+  - Quantum properties such as superposition
+- Superposed pieces receive higher weights to reflect tactical uncertainty
+
+#### 5. Quantum Minimax Search
+- Modified minimax algorithm with alpha–beta pruning
+- Handles probabilistic outcomes caused by measurement
+- Recursively explores move sequences represented as quantum circuits
+- Designed to balance exploration depth with quantum evaluation cost
+
+---
+
+### ⚠️ Design Notes & Limitations
+
+- Legal move generation currently acts as a **placeholder abstraction**
+- Entanglement rules are conceptual and not yet physically modeled
+- Each board measurement collapses the quantum state (no partial reuse yet)
+- Performance is constrained by simulator execution cost
+
+---
+
+### 🎯 Design Philosophy
+
+Rather than simulating a physically perfect quantum system, this engine focuses on:
+- **Conceptual correctness**
+- **Explorability of quantum decision-making**
+- **Extensibility for research and experimentation**
+
+This makes the implementation suitable as:
+- A research prototype
+- A teaching tool
+- A foundation for future quantum game AI systems
+
+(See the complete implementation in the source file for detailed method definitions and inline documentation.)
 
 ---
 
