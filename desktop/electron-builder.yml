@@ -1,0 +1,62 @@
+# Quantum Chess Ultimate — Electron Builder Configuration
+
+appId: com.quantumchess.ultimate
+productName: Quantum Chess Ultimate
+copyright: Copyright © 2026 Quantum Chess
+compression: maximum
+
+directories:
+  output: release
+  buildResources: assets
+
+files:
+  - dist-electron/**/*
+  - "!node_modules"
+
+extraResources:
+  - from: ../frontend/dist
+    to: renderer
+    filter:
+      - "**/*"
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+        - arm64
+  icon: assets/icon.ico
+  artifactName: "QuantumChess-${version}-${arch}.${ext}"
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  installerIcon: assets/icon.ico
+  uninstallerIcon: assets/icon.ico
+  installerHeaderIcon: assets/icon.ico
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Quantum Chess
+
+mac:
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  icon: assets/icon.icns
+  category: public.app-category.board-games
+
+linux:
+  target:
+    - target: AppImage
+    - target: deb
+  icon: assets/icon.png
+  category: Game
+
+publish:
+  provider: github
+  owner: quantumchess
+  repo: ultimate
+  releaseType: release

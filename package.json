@@ -1,0 +1,29 @@
+{
+  "name": "quantum_chess_ultimate",
+  "version": "1.0.0",
+  "description": "![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)\r ![Qiskit](https://img.shields.io/badge/Qiskit-Quantum%20SDK-purple.svg)\r ![Research](https://img.shields.io/badge/Project-Research%20%26%20Experimental-orange.svg)\r ![Status](https://img.shields.io/badge/Status-Active%20Development-success.svg)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rajarshi1-source/Quantum-Chess-Ultimate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Rajarshi1-source/Quantum-Chess-Ultimate/issues"
+  },
+  "homepage": "https://github.com/Rajarshi1-source/Quantum-Chess-Ultimate#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.2.3"
+  }
+}

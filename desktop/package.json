@@ -1,0 +1,25 @@
+{
+  "name": "quantum-chess-desktop",
+  "version": "1.0.0",
+  "description": "Quantum Chess Ultimate — Desktop Application",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "electron .",
+    "build": "tsc -p tsconfig.electron.json",
+    "package": "npm run build && electron-builder",
+    "package:win": "npm run build && electron-builder --win"
+  },
+  "dependencies": {
+    "electron-updater": "^6.3.0"
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.0.0",
+    "typescript": "~5.9.3"
+  },
+  "build": {
+    "appId": "com.quantumchess.ultimate",
+    "productName": "Quantum Chess Ultimate",
+    "extends": null
+  }
+}
