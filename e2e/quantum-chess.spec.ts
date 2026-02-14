@@ -76,7 +76,7 @@ test.describe('Quantum Chess Ultimate', () => {
         await expect(page.locator('[data-square="e4"]')).toHaveClass(/square-last-move/);
 
         // Turn should change
-        await expect(page.getByText('● Black')).toBeVisible();
+        await expect(page.getByText('● Black', { exact: true })).toBeVisible();
     });
 
     test('should show analysis panel after game creation', async ({ page }) => {
@@ -86,7 +86,7 @@ test.describe('Quantum Chess Ultimate', () => {
         // Analysis panel sections
         await expect(page.getByText('Status')).toBeVisible();
         await expect(page.getByText('Evaluation')).toBeVisible();
-        await expect(page.getByText('Captured')).toBeVisible();
+        await expect(page.getByText('Captured', { exact: true })).toBeVisible();
         await expect(page.getByText('Move History')).toBeVisible();
     });
 
@@ -96,7 +96,7 @@ test.describe('Quantum Chess Ultimate', () => {
 
         // Quantum metrics should be visible
         await expect(page.getByText('Quantum Metrics')).toBeVisible();
-        await expect(page.getByText('Superpositions')).toBeVisible();
+        await expect(page.getByText('Superpositions', { exact: true })).toBeVisible();
         await expect(page.getByText('Entanglements')).toBeVisible();
     });
 
