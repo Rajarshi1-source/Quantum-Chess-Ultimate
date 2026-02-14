@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: quantum_chess_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://postgres:postgres@db:5432/quantum_chess
+    depends_on:
+      - db
+    networks:
+      - quantum_net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: quantum_chess_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - quantum_net
+
+  db:
+    image: postgres:15-alpine
+    container_name: quantum_chess_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=quantum_chess
+    ports:
+      - "5432:5432"
+    networks:
+      - quantum_net
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  quantum_net:
+    driver: bridge
