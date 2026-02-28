@@ -11,6 +11,21 @@ import sys
 
 class Settings(BaseSettings):
     """Application settings loaded from environment variables."""
+    
+    # Application
+    APP_NAME: str = "Quantum Chess Ultimate"
+    APP_VERSION: str = "1.0.0"
+    ENVIRONMENT: str = "development"
+    DEBUG: bool = True
+
+    # Server
+    HOST: str = "0.0.0.0"
+    PORT: int = 8000
+
+    # CORS
+    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3000"
+
+    # Database
     DATABASE_URL: str # No default - required env var
     
     @field_validator("DATABASE_URL")
